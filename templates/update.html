@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Update Todo{% endblock %}
+{% block content %}
+
+	<div class="container">
+    	<h1>Update Todo</h1>
+    	<br/>
+    	<form action="/update/{{todo_to_update.id}}" METHOD="POST">
+    		<input type="text" placeholder="Todo" name="name" value="{{todo_to_update.name}}">
+    		<input type="submit" value="Update Todo" class="btn btn-secondary">
+    		
+    	</form>
+    	
+	</div>
+
+{% endblock %}

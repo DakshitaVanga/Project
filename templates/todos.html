@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+
+	<div class="container">
+    	<h1>Todos</h1>
+    	<br/>
+    	<form action="/todos" METHOD="POST">
+    		<input type="text" placeholder="Todo" name="name">
+    		<input type="submit" value="Add Todo" class="btn btn-secondary">
+    		
+    	</form>
+    	<br/><br/>
+    	{% for todo in todos %}
+    	<h4>
+    		{{todo.name}}<a href="/update/{{todo.id}}" class="btn btn-outline-secondary btn-sm">Update</a>
+			<a href="/delete/{{todo.id}}" class="btn btn-outline-danger btn-sm">Delete</a>
+    	</h4>
+
+    	{% endfor%}
+    	
+	</div>
+
+{% endblock %}
