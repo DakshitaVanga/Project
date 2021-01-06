@@ -16,13 +16,8 @@ class Todos(db.Model):
 
 @app.route('/')
 def index():
-	title = "Dakshita's Todo List"
+	title = "Todo List"
 	return render_template("index.html",title=title)
-
-@app.route('/about')
-def about():
-	todos = ["yoga", "leetcode", "dance", "run"]
-	return render_template("about.html", todos = todos)
 
 @app.route('/todos', methods=['POST', 'GET'])
 def todos():
@@ -68,7 +63,7 @@ def delete(id):
 	except:
 		return "There was an error deleting your todo"
 
-	
+
 
 if __name__=='__main__':
 	app.run(debug=True)
